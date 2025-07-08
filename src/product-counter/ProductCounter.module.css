@@ -1,0 +1,24 @@
+.productCounter {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.productCounter__btn {
+  border: 1px solid #000;
+  width: 25px;
+  height: 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.productCounter__btn:hover {
+  background-color: #ccc;
+}
+
+.productCounter__btn:disabled {
+  color: #888;
+  border-color: #888;
+  background-color: transparent;
+  pointer-events: none;
+}

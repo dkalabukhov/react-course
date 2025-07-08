@@ -1,0 +1,16 @@
+.review {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px dotted #000;
+  gap: 5px;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.review:last-child {
+  border: none;
+}
+
+.review__user {
+  font-weight: 600;
+}
