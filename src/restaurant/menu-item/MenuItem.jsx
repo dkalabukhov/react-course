@@ -1,4 +1,4 @@
-import { ProductCounter } from '../../product-counter/ProductCounter';
+import { DishCounter } from '../../dish-counter/DishCounter';
 import { Ingredients } from './ingredients/Ingredients';
 
 import styles from './MenuItem.module.css';
@@ -6,11 +6,11 @@ import styles from './MenuItem.module.css';
 export const MenuItem = ({ menuItem }) => {
   return (
     <li className={styles.menuItem} key={menuItem.id}>
-      <div className={styles.menuItem__product}>
-        <span className={styles.menuItem__productName}>
+      <div className={styles.menuItem__dish}>
+        <span className={styles.menuItem__dishName}>
           {menuItem.name} - {menuItem.price}$
         </span>
-        <ProductCounter />
+        <DishCounter />
       </div>
       <Ingredients ingredients={menuItem.ingredients} />
     </li>

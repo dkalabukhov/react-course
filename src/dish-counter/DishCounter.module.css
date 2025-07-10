@@ -1,10 +1,10 @@
-.productCounter {
+.dishCounter {
   display: flex;
   align-items: center;
   gap: 0.7rem;
 }
 
-.productCounter__btn {
+.dishCounter__btn {
   border: 1px solid #000;
   width: 25px;
   height: 25px;
@@ -12,11 +12,11 @@
   cursor: pointer;
 }
 
-.productCounter__btn:hover {
+.dishCounter__btn:hover {
   background-color: #ccc;
 }
 
-.productCounter__btn:disabled {
+.dishCounter__btn:disabled {
   color: #888;
   border-color: #888;
   background-color: transparent;

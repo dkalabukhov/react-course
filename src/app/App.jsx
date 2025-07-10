@@ -1,10 +1,10 @@
 import { Layout } from '../layout/Layout';
-import { RestaurantTabs } from '../restaurant-tabs/RestaurantTabs';
+import { RestaurantsPage } from '../pages/RestaurantsPage';
 
 export const App = () => {
   return (
     <Layout>
-      <RestaurantTabs />
+      <RestaurantsPage />
     </Layout>
   );
 };

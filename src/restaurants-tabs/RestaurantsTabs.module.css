@@ -1,32 +1,32 @@
-.restaurants {
+.restaurantsTabs {
   display: flex;
   justify-content: center;
 }
 
-.restaurants__list {
+.restaurantsTabs__list {
   display: flex;
   list-style: none;
   overflow-x: auto;
   padding-left: 0;
 }
 
-.restaurants__tabBtn {
+.restaurantsTabs__tabBtn {
   padding: 1rem 2rem;
   white-space: nowrap;
   cursor: pointer;
-  transition: color 0.5s ease;
+  transition: all 0.3s ease;
 }
 
-.restaurants__tabBtn:hover {
+.restaurantsTabs__tabBtn:hover {
   opacity: 0.8;
 }
 
-.restaurants__tabBtn_active {
+.restaurantsTabs__tabBtn_active {
   color: #9d2828;
 }
 
 @media (min-width: 768px) {
-  .restaurants__list {
+  .restaurantsTabs__list {
     overflow-x: visible;
   }
 }
