@@ -6,10 +6,12 @@ import { Restaurant } from '../restaurant/Restaurant';
 import { restaurants } from '../../materials/mock';
 
 export const RestaurantsPage = () => {
-  const [activeRestaurant, setActiveRestaurant] = useState(restaurants[0]);
+  const [activeRestaurantId, setActiveRestaurantId] = useState(restaurants[0].id);
 
-  const handleTabClick = (tab) => {
-    setActiveRestaurant(tab);
+  const activeRestaurant = restaurants.find(({ id }) => id === activeRestaurantId);
+
+  const handleTabClick = (restaurant) => {
+    setActiveRestaurantId(restaurant.id);
   };
 
   return (

@@ -12,7 +12,9 @@ export const MenuItem = ({ menuItem }) => {
         </span>
         <DishCounter />
       </div>
-      <Ingredients ingredients={menuItem.ingredients} />
+      {menuItem.ingredients && (
+        <Ingredients ingredients={menuItem.ingredients} />
+      )}
     </li>
   );
 };

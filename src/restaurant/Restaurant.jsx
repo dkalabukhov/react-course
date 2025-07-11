@@ -6,6 +6,10 @@ import { AnimatePresence, motion } from 'motion/react';
 import styles from './Restaurant.module.css';
 
 export const Restaurant = ({ restaurant }) => {
+  if (!restaurant.menu || !restaurant.name) {
+    return null;
+  }
+
   return (
     <AnimatePresence mode='wait'>
       <motion.div
