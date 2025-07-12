@@ -13,7 +13,7 @@
 
 .restaurant__subtitle {
   text-transform: uppercase;
-  margin: 10px 0;
+  margin: 15px 0;
 }
 
 @media (min-width: 768px) {

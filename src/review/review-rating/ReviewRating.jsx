@@ -1,6 +1,6 @@
-import styles from './Rating.module.css';
+import styles from './ReviewRating.module.css';
 
-export const Rating = ({ review }) => {
+export const ReviewRating = ({ review }) => {
   return (
     <div className={styles.rating}>
       {[...Array(review.rating)].map((_, index) => (
