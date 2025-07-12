@@ -4,6 +4,7 @@ import { MenuList } from './menu-list/MenuList';
 import { AnimatePresence, motion } from 'motion/react';
 
 import styles from './Restaurant.module.css';
+import { ReviewForm } from '../review-form/ReviewForm';
 
 export const Restaurant = ({ restaurant }) => {
   if (!restaurant.menu || !restaurant.name) {
@@ -29,6 +30,8 @@ export const Restaurant = ({ restaurant }) => {
         ) : (
           <p>Отзывов нет. Оставьте первый</p>
         )}
+        <h3 className={styles.restaurant__subtitle}>Оставить отзыв</h3>
+        <ReviewForm />
       </motion.div>
     </AnimatePresence>
   );
