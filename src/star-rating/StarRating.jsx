@@ -1,24 +1,14 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 
 import styles from './StarRating.module.css';
 
 export const StarRating = ({
   count = 5,
-  currentRating = 0,
+  rating = 0,
   iconSize = 18,
   handleUserSetRating,
 }) => {
-  const [rating, setRating] = useState(0);
   const [temporaryRating, setTemporaryRating] = useState(0);
-
-  useEffect(() => {
-    setRating(currentRating);
-  }, [currentRating]);
-
-  const handleStarClick = (rating) => {
-    setRating(rating);
-    handleUserSetRating(rating);
-  };
 
   const stars = useMemo(() => [...Array(count)].fill('⭐️'), [count]);
 
@@ -39,7 +29,7 @@ export const StarRating = ({
             }}
             onMouseEnter={() => setTemporaryRating(index + 1)}
             onMouseLeave={() => setTemporaryRating(0)}
-            onClick={() => handleStarClick(index + 1)}
+            onClick={() => handleUserSetRating(index + 1)}
           >
             {star}
           </div>

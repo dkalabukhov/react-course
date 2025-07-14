@@ -64,7 +64,7 @@ export const ReviewForm = () => {
       <div className={styles.reviewForm__group}>
         <span>Оценка:</span>
         <StarRating
-          currentRating={rating}
+          rating={rating}
           handleUserSetRating={handleUserSetRating}
         />
       </div>
