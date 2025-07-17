@@ -1,4 +1,4 @@
-import styles from './Ingredients.module.css';
+import styles from './Ingredients.module.scss';
 
 const Ingredient = ({ children }) => {
   return <span className={styles.ingredients__ingredient}>{children}</span>;

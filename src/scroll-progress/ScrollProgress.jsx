@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import styles from './ScrollProgress.module.css';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
+
+import styles from './ScrollProgress.module.scss';
 
 export const ScrollProgress = () => {
   const [scrollProgress, setScrollProgress] = useState(0);

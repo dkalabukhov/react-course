@@ -1,11 +1,13 @@
+import cn from 'classnames';
+
 import { useState, useMemo } from 'react';
 
-import styles from './StarRating.module.css';
+import styles from './StarRating.module.scss';
 
 export const StarRating = ({
   count = 5,
   rating = 0,
-  iconSize = 18,
+  sizeVariant = 'm',
   handleUserSetRating,
 }) => {
   const [temporaryRating, setTemporaryRating] = useState(0);
@@ -22,11 +24,14 @@ export const StarRating = ({
         return (
           <div
             key={index}
-            className={styles.starRating__star}
-            style={{
-              fontSize: `${iconSize}px`,
-              filter: isActiveColor ? 'grayscale(0)' : 'grayscale(100%)',
-            }}
+            className={cn(styles.starRating__star, {
+              [styles.starRating__star_active]: isActiveColor,
+              [styles.starRating__star_xs]: sizeVariant === 'xs',
+              [styles.starRating__star_s]: sizeVariant === 's',
+              [styles.starRating__star_m]: sizeVariant === 'm',
+              [styles.starRating__star_l]: sizeVariant === 'l',
+              [styles.starRating__star_xl]: sizeVariant === 'xl',
+            })}
             onMouseEnter={() => setTemporaryRating(index + 1)}
             onMouseLeave={() => setTemporaryRating(0)}
             onClick={() => handleUserSetRating(index + 1)}

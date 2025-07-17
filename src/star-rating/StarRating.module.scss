@@ -1,0 +1,44 @@
+.starRating {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+
+  &__star {
+    transition: all 0.1s linear;
+    cursor: pointer;
+    filter: grayscale(100%);
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__star_xs {
+    font-size: 10px;
+  }
+
+  &__star_s {
+    font-size: 14px;
+  }
+
+  &__star_m {
+    font-size: 18px;
+  }
+
+  &__star_l {
+    font-size: 22px;
+  }
+
+  &__star_xl {
+    font-size: 26px;
+  }
+
+  &__star_active {
+    filter: grayscale(0);
+  }
+
+  &__count {
+    margin-bottom: -0.1rem;
+    font-style: italic;
+  }
+}

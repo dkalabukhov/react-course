@@ -1,6 +1,6 @@
 import { MenuItem } from '../menu-item/MenuItem';
 
-import styles from './MenuList.module.css';
+import styles from './MenuList.module.scss';
 
 export const MenuList = ({ menu }) => {
   return (

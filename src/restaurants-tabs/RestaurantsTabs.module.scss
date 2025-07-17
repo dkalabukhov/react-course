@@ -1,0 +1,33 @@
+.restaurantsTabs {
+  display: flex;
+  justify-content: center;
+
+  &__list {
+    display: flex;
+    overflow-x: auto;
+
+    @media (min-width: 768px) {
+      overflow-x: visible;
+    }
+  }
+
+  &__tabBtn {
+    padding: 0.5rem 1rem;
+    flex-shrink: 0;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    @media (min-width: 768px) {
+      padding: 1rem 2rem;
+    }
+  }
+
+  &__tabBtn:hover {
+    opacity: 0.8;
+  }
+
+  &__tabBtn_active {
+    color: #9d2828;
+  }
+}

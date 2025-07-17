@@ -1,10 +1,10 @@
-import { ReviewList } from '../review-list/ReviewList';
-import { MenuList } from './menu-list/MenuList';
-
 import { AnimatePresence, motion } from 'motion/react';
 
-import styles from './Restaurant.module.css';
+import { ReviewList } from '../review-list/ReviewList';
+import { MenuList } from './menu-list/MenuList';
 import { ReviewForm } from '../review-form/ReviewForm';
+
+import styles from './Restaurant.module.scss';
 
 export const Restaurant = ({ restaurant }) => {
   if (!restaurant.menu || !restaurant.name) {

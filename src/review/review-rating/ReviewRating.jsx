@@ -1,4 +1,4 @@
-import styles from './ReviewRating.module.css';
+import styles from './ReviewRating.module.scss';
 
 export const ReviewRating = ({ review }) => {
   return (

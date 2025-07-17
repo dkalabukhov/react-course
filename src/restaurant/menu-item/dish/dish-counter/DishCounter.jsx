@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import styles from './DishCounter.module.css';
+import styles from './DishCounter.module.scss';
 
 const MINIMUM_AMOUNT = 0;
 const MAXIMUM_AMOUNT = 5;

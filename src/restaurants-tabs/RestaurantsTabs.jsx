@@ -1,6 +1,6 @@
 import cn from 'classnames';
 
-import styles from './RestaurantsTabs.module.css';
+import styles from './RestaurantsTabs.module.scss';
 
 export const RestaurantsTabs = ({
   restaurants,

@@ -2,7 +2,7 @@ import { ScrollProgress } from '../scroll-progress/ScrollProgress';
 import { Footer } from './footer/Footer';
 import { Header } from './header/Header';
 
-import styles from './Layout.module.css';
+import styles from './Layout.module.scss';
 
 export const Layout = ({ children }) => {
   return (
