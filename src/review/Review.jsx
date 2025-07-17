@@ -1,6 +1,6 @@
 import { ReviewRating } from './review-rating/ReviewRating';
 
-import styles from './Review.module.css';
+import styles from './Review.module.scss';
 
 export const Review = ({ review }) => {
   return (

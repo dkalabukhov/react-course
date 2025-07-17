@@ -1,17 +1,12 @@
-import { DishCounter } from '../../dish-counter/DishCounter';
+import { Dish } from './dish/Dish';
 import { Ingredients } from './ingredients/Ingredients';
 
-import styles from './MenuItem.module.css';
+import styles from './MenuItem.module.scss';
 
 export const MenuItem = ({ menuItem }) => {
   return (
     <li className={styles.menuItem} key={menuItem.id}>
-      <div className={styles.menuItem__dish}>
-        <span className={styles.menuItem__dishName}>
-          {menuItem.name} - {menuItem.price}$
-        </span>
-        <DishCounter />
-      </div>
+      <Dish name={menuItem.name} price={menuItem.price} />
       {menuItem.ingredients && (
         <Ingredients ingredients={menuItem.ingredients} />
       )}
