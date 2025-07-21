@@ -4,7 +4,7 @@
   gap: 0.7rem;
 
   &__btn {
-    border: 1px solid #000;
+    border: 1px solid var(--light-theme-color);
     width: 25px;
     height: 25px;
     font-size: 1.1rem;
@@ -13,14 +13,17 @@
     justify-content: center;
     align-items: center;
 
+    &_dark {
+      border-color: var(--dark-theme-color);
+    }
+
     &:hover {
-      background-color: #ccc;
+      background-color: #d0cfcf;
+      color: var(--light-theme-color);
     }
 
     &:disabled {
-      color: #888;
-      border-color: #888;
-      background-color: transparent;
+      opacity: 0.5;
       pointer-events: none;
     }
   }

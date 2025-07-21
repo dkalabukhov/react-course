@@ -1,3 +1,5 @@
+import { UserContextProvider } from '../user-context/UserContextProvider';
+import { ThemeContextProvider } from '../theme-context/ThemeContextProvider';
 import { Layout } from '../layout/Layout';
 import { RestaurantsPage } from '../pages/RestaurantsPage';
 
@@ -6,8 +8,12 @@ import '../globals.scss';
 
 export const App = () => {
   return (
-    <Layout>
-      <RestaurantsPage />
-    </Layout>
+    <UserContextProvider>
+      <ThemeContextProvider>
+        <Layout>
+          <RestaurantsPage />
+        </Layout>
+      </ThemeContextProvider>
+    </UserContextProvider>
   );
 };

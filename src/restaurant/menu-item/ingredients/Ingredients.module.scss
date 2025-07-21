@@ -5,10 +5,14 @@
   padding-bottom: 1rem;
 
   &__ingredient {
-    border: 1px solid #000;
+    border: 1px solid var(--light-theme-color);
     padding: 0.2rem 0.4rem;
     border-radius: 18px;
     flex-shrink: 0;
+
+    &_dark {
+      border-color: var(--dark-theme-color);
+    }
   }
 
   @media (min-width: 768px) {

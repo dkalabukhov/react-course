@@ -1,0 +1,69 @@
+.themeSwitcher {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+
+  &__btn {
+    opacity: 0.5;
+  }
+
+  &__btn:disabled {
+    pointer-events: none;
+    opacity: 1;
+  }
+}
+
+.toggler {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+
+  &__input {
+    position: absolute;
+    left: -100vw;
+  }
+
+  &__state {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__control {
+    width: 52px;
+    height: 28px;
+    border: 1px solid #5d5b5b;
+    border-radius: 16px;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    transition: all 0.5s ease;
+  }
+
+  &__circle {
+    width: 24px;
+    height: 24px;
+    background-color: #eeecec;
+    border-radius: 50%;
+    transform: translateX(0);
+    transition: transform 0.5s ease;
+  }
+}
+
+.toggler__input:checked ~ .toggler__state .toggler__control {
+  background-color: #4263EB;
+  border-color: #4263EB
+}
+
+.toggler__input:checked ~ .toggler__state .toggler__circle {
+  transform: translateX(22px);
+}
+
+.toggler__input:disabled ~ .toggler__state .toggler__control {
+  background-color: #5d5b5b;
+}
+
+.toggler__input:disabled ~ .toggler__state .toggler__circle {
+  background-color: #5d5b5b;
+  opacity: 0.25;
+}

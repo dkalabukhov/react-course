@@ -1,9 +1,13 @@
 .review {
   display: flex;
   flex-direction: column;
-  border-bottom: 1px dotted #000;
+  border-bottom: 1px dotted var(--light-theme-color);
   gap: 0.8rem;
   padding-bottom: 10px;
+
+  &_dark {
+    border-color: var(--dark-theme-color);
+  }
 
   &:last-child {
     border: none;

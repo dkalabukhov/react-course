@@ -1,11 +1,40 @@
 .header {
+  color: var(--light-theme-color);
+  background-color: var(--light-theme-bg);
+
+  &_dark {
+    background-color: var(--dark-theme-bg);
+    color: var(--dark-theme-color);
+  }
+
   &__wrapper {
-    display: flex;
-    justify-content: center;
     padding: 2rem 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 0;
+    }
   }
 
   &__heading {
-    font-size: 2.5rem;
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 }

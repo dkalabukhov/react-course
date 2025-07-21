@@ -2,4 +2,14 @@
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
+
+  &__main {
+    color: var(--light-theme-color);
+    background-color: var(--light-theme-bg);
+
+    &_dark {
+      background-color: var(--dark-theme-bg);
+      color: var(--dark-theme-color);
+    }
+  }
 }

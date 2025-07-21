@@ -1,4 +1,7 @@
+import cn from 'classnames';
+
 import { useState } from 'react';
+import { useTheme } from '../../../../theme-context/use-theme';
 
 import styles from './DishCounter.module.scss';
 
@@ -6,6 +9,7 @@ const MINIMUM_AMOUNT = 0;
 const MAXIMUM_AMOUNT = 5;
 
 export const DishCounter = () => {
+  const { theme } = useTheme();
   const [counter, setCounter] = useState(0);
 
   const handleDecrement = () => {
@@ -25,7 +29,9 @@ export const DishCounter = () => {
       <button
         disabled={counter === MINIMUM_AMOUNT}
         onClick={handleDecrement}
-        className={styles.dishCounter__btn}
+        className={cn(styles.dishCounter__btn, {
+          [styles.dishCounter__btn_dark]: theme === 'dark',
+        })}
       >
         -
       </button>
@@ -33,7 +39,9 @@ export const DishCounter = () => {
       <button
         disabled={counter === MAXIMUM_AMOUNT}
         onClick={handleIncrement}
-        className={styles.dishCounter__btn}
+        className={cn(styles.dishCounter__btn, {
+          [styles.dishCounter__btn_dark]: theme === 'dark',
+        })}
       >
         +
       </button>

@@ -13,9 +13,13 @@
 
   &__input {
     border: none;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid var(--light-theme-color);
     outline: none;
     padding: 5px;
+
+    &_dark {
+      border-color: var(--dark-theme-color);
+    }
   }
 
   &__textarea {
@@ -24,8 +28,12 @@
     min-width: 300px;
     max-width: 300px;
     outline: none;
-    border: 1px solid #000;
+    border: 1px solid var(--light-theme-color);
     padding: 5px;
+
+    &_dark {
+      border-color: var(--dark-theme-color);
+    }
   }
 
   &__controls {
@@ -41,12 +49,17 @@
   }
 
   &__btn_clear {
-    border: 1px solid #000;
+    border: 1px solid var(--light-theme-color);
 
     &:hover {
       border: 1px solid #ccc;
       background-color: #ccc;
+      color: #000;
     }
+  }
+
+  &__btn_clear_dark {
+    border: 1px solid var(--dark-theme-color);
   }
 
   &__btn_submit {

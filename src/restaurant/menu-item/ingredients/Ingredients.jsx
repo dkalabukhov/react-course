@@ -1,7 +1,20 @@
+import cn from 'classnames';
+
+import { useTheme } from '../../../theme-context/use-theme';
+
 import styles from './Ingredients.module.scss';
 
 const Ingredient = ({ children }) => {
-  return <span className={styles.ingredients__ingredient}>{children}</span>;
+  const { theme } = useTheme();
+  return (
+    <span
+      className={cn(styles.ingredients__ingredient, {
+        [styles.ingredients__ingredient_dark]: theme === 'dark',
+      })}
+    >
+      {children}
+    </span>
+  );
 };
 
 export const Ingredients = ({ ingredients }) => {

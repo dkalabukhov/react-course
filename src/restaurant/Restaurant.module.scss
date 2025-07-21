@@ -2,8 +2,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #eeecec;
+  background-color: var(--light-theme-restaurant-bg);
   padding: 1rem;
+
+  &_dark {
+    background-color: var(--dark-theme-restaurant-bg);
+  }
 
   &__title {
     font-size: 1.5rem;
