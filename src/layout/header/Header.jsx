@@ -2,15 +2,12 @@ import cn from 'classnames';
 
 import { useTheme } from '../../theme-context/use-theme';
 import { ThemeSwitcher } from './theme-switcher/ThemeSwitcher';
-import { useUser } from '../../user-context/use-user';
-import { LogInBtn } from './log-in-btn/LogInBtn';
-import { Profile } from './profile/Profile';
+import { UserAuth } from './user-auth/UserAuth';
 
 import styles from './Header.module.scss';
 
 export const Header = () => {
   const { theme } = useTheme();
-  const { user, logIn, logOut } = useUser();
 
   return (
     <header
@@ -20,11 +17,7 @@ export const Header = () => {
         <div className={styles.header__wrapper}>
           <ThemeSwitcher />
           <h1 className={styles.header__heading}>AnyFood</h1>
-          {user ? (
-            <Profile user={user} logOut={logOut} />
-          ) : (
-            <LogInBtn logIn={logIn} />
-          )}
+          <UserAuth />
         </div>
       </div>
     </header>

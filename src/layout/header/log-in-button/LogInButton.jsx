@@ -1,6 +1,6 @@
 import { LogIn } from "lucide-react";
 
-import styles from './LogInBtn.module.scss';
+import styles from './LogInButton.module.scss';
 
 export const LogInBtn = ({ logIn }) => {
   return (

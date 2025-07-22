@@ -1,6 +1,6 @@
 import { LogOut } from "lucide-react";
 
-import styles from './LogOutBtn.module.scss';
+import styles from './LogOutButton.module.scss';
 
 export const LogOutBtn = ({ logOut }) => {
   return (

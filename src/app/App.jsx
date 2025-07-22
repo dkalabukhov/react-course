@@ -1,4 +1,4 @@
-import { UserContextProvider } from '../user-context/UserContextProvider';
+import { AuthContextProvider } from '../auth-context/AuthContextProvider';
 import { ThemeContextProvider } from '../theme-context/ThemeContextProvider';
 import { Layout } from '../layout/Layout';
 import { RestaurantsPage } from '../pages/RestaurantsPage';
@@ -8,12 +8,12 @@ import '../globals.scss';
 
 export const App = () => {
   return (
-    <UserContextProvider>
+    <AuthContextProvider>
       <ThemeContextProvider>
         <Layout>
           <RestaurantsPage />
         </Layout>
       </ThemeContextProvider>
-    </UserContextProvider>
+    </AuthContextProvider>
   );
 };

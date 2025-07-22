@@ -5,12 +5,12 @@ import { ReviewList } from '../review-list/ReviewList';
 import { MenuList } from './menu-list/MenuList';
 import { ReviewForm } from '../review-form/ReviewForm';
 import { useTheme } from '../theme-context/use-theme';
-import { useUser } from '../user-context/use-user';
+import { useAuth } from '../auth-context/use-auth';
 
 import styles from './Restaurant.module.scss';
 
 export const Restaurant = ({ restaurant }) => {
-  const { user } = useUser();
+  const { isAuthorized } = useAuth();
   const { theme } = useTheme();
 
   if (!restaurant.menu || !restaurant.name) {
@@ -39,7 +39,7 @@ export const Restaurant = ({ restaurant }) => {
           <p>Отзывов нет. Оставьте первый</p>
         )}
         <h3 className={styles.restaurant__subtitle}>Оставить отзыв</h3>
-        {user ? <ReviewForm /> : <p>Войдите, чтобы оставить отзыв</p>}
+        {isAuthorized ? <ReviewForm /> : <p>Войдите, чтобы оставить отзыв</p>}
       </motion.div>
     </AnimatePresence>
   );
