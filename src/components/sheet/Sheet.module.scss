@@ -1,0 +1,67 @@
+.sheet {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  transform: translateX(-199vw);
+  transition: transform 0.3s ease-in-out;
+
+  &_right {
+    transform: translateX(199vw);
+  }
+
+  &_active {
+    transform: translateX(0);
+  }
+
+  &__wrapper {
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    &_right {
+      justify-content: end;
+    }
+  }
+
+  &__content {
+    width: 300px;
+    height: 100vh;
+    position: relative;
+    background-color: var(--light-theme-bg);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+    border-right: 1px solid #000;
+    color: var(--light-theme-color);
+
+    &_large {
+      width: 356px;
+    }
+
+    &_right {
+      border-left: 1px solid #000;
+      border-right: none;
+    }
+
+    &_dark {
+      background-color: var(--dark-theme-sheet-bg);
+      border-color: #fff;
+      color: var(--dark-theme-color);
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+  }
+}

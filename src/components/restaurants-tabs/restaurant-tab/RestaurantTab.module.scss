@@ -1,0 +1,22 @@
+.restaurantTab {
+  &__button {
+    padding: 0.5rem 1rem;
+    flex-shrink: 0;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    @media (min-width: 768px) {
+      padding: 1rem 2rem;
+    }
+  }
+
+  &__button:hover {
+    opacity: 0.8;
+  }
+
+  &__button_active {
+    color: #9d2828;
+  }
+}
+
