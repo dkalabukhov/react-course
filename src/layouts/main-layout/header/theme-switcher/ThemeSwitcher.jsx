@@ -1,6 +1,6 @@
 import { MoonStar, Sun } from 'lucide-react';
 
-import { useTheme } from '../../../theme-context/use-theme';
+import { useTheme } from '../../../../components/theme-context/use-theme';
 
 import styles from './ThemeSwitcher.module.scss';
 

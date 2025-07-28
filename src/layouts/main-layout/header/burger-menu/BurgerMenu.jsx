@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Menu } from "lucide-react";
 
 import { ThemeSwitcher } from "../theme-switcher/ThemeSwitcher";
-import { Sheet } from "../../../sheet/Sheet";
-import { useTheme } from "../../../theme-context/use-theme";
+import { Sheet } from "../../../../components/sheet/Sheet";
+import { useTheme } from "../../../../components/theme-context/use-theme";
 import { UserAuth } from "../user-auth/UserAuth";
 
 import styles from './BurgerMenu.module.scss';

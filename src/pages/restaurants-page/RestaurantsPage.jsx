@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import { RestaurantsTabs } from '../components/restaurants-tabs/RestaurantsTabs';
-import { RestaurantContainer } from '../components/restaurant/RestaurantContainer';
+import { RestaurantsTabs } from '../../components/restaurants-tabs/RestaurantsTabs';
+import { RestaurantContainer } from '../../components/restaurant/RestaurantContainer';
 
 export const RestaurantsPage = ({ restaurantsIds }) => {
   const [activeRestaurantId, setActiveRestaurantId] = useState(

@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router';
 
 import styles from './ScrollProgress.module.scss';
 
 export const ScrollProgress = () => {
+  const location = useLocation();
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
@@ -27,6 +29,10 @@ export const ScrollProgress = () => {
       window.removeEventListener('resize', handleScroll);
     };
   });
+
+  useEffect(() => {
+    setScrollProgress(0);
+  }, [location]);
 
   return (
     <div className={styles.scrollProgress}>

@@ -16,7 +16,7 @@
   }
 
   &__button_active {
-    color: #9d2828;
+    color: var(--active-link-color);
   }
 }
 

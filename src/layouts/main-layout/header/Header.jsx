@@ -1,12 +1,13 @@
 import cn from 'classnames';
 
-import { useTheme } from '../../theme-context/use-theme';
+import { useTheme } from '../../../components/theme-context/use-theme';
 import { ThemeSwitcher } from './theme-switcher/ThemeSwitcher';
 import { UserAuth } from './user-auth/UserAuth';
 import { BurgerMenu } from './burger-menu/BurgerMenu';
-import { CartContainer } from '../../cart/CartContainer';
+import { CartContainer } from '../../../components/cart/CartContainer';
 
 import styles from './Header.module.scss';
+import { Logo } from './logo/Logo';
 
 export const Header = () => {
   const { theme } = useTheme();
@@ -21,7 +22,7 @@ export const Header = () => {
             <BurgerMenu />
             <CartContainer />
           </div>
-          <h1 className={styles.header__logo}>AnyFood</h1>
+          <Logo title='AnyFood' centered />
           <div className={styles.header__desktop}>
             <ThemeSwitcher />
             <div className={styles.header__controls}>

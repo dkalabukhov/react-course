@@ -1,4 +1,4 @@
-import { useAuth } from '../../../auth-context/use-auth';
+import { useAuth } from '../../../../components/auth-context/use-auth';
 import { LogInBtn } from '../log-in-button/LogInButton';
 import { LogOutBtn } from '../log-out-button/LogOutButton';
 import { Profile } from '../profile/Profile';
