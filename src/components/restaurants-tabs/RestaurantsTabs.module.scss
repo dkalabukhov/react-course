@@ -1,6 +1,27 @@
 .restaurantsTabs {
   display: flex;
   justify-content: center;
+  position: relative;
+
+  &__arrowBack {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    @media(min-width: 1100px) {
+      display: flex;
+    }
+  }
 
   &__list {
     display: flex;

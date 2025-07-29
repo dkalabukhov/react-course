@@ -1,25 +1,22 @@
-import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { Outlet, useLocation } from 'react-router';
 
 import { RestaurantsTabs } from '../../components/restaurants-tabs/RestaurantsTabs';
-import { RestaurantContainer } from '../../components/restaurant/RestaurantContainer';
+import { selectRestaurantsIds } from '../../redux/entities/restaurants/restaurantsSlice';
+import { RestaurantsList } from '../../components/restaurants-list/RestaurantsList';
 
-export const RestaurantsPage = ({ restaurantsIds }) => {
-  const [activeRestaurantId, setActiveRestaurantId] = useState(
-    restaurantsIds[0]
-  );
-
-  const handleTabClick = (id) => {
-    setActiveRestaurantId(id);
-  };
+export const RestaurantsPage = () => {
+  const restaurantsIds = useSelector(selectRestaurantsIds);
+  const { pathname } = useLocation();
 
   return (
     <>
-      <RestaurantsTabs
-        restaurantsIds={restaurantsIds}
-        activeRestaurantId={activeRestaurantId}
-        handleTabClick={handleTabClick}
-      />
-      <RestaurantContainer activeRestaurantId={activeRestaurantId} />
+      {pathname === '/restaurants' ? (
+        <RestaurantsList restaurantIds={restaurantsIds} />
+      ) : (
+        <RestaurantsTabs restaurantsIds={restaurantsIds} />
+      )}
+      <Outlet />
     </>
   );
 };

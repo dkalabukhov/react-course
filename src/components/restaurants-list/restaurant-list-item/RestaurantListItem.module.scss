@@ -1,0 +1,46 @@
+.restaurantLink {
+  display: flex;
+  justify-content: center;
+}
+
+.restaurantListItem {
+  display: flex;
+  gap: 1rem;
+  border: 1px solid #e2e2e2;
+  padding: 1rem;
+  flex-grow: 1;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 3px 3px 8px #e2e2e2;
+    transform: scale(1.02);
+  }
+
+  @media (min-width: 768px) {
+    max-width: 70%;
+  }
+
+  &__name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  &__img {
+    flex-shrink: 0;
+    width: 180px;
+    height: 125px;
+  }
+}
+
+.restaurantInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+
+  &__name {
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+}
