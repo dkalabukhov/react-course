@@ -47,16 +47,26 @@
   align-content: center;
   padding: 0.8rem 0;
   border: 1px solid var(--light-theme-color);
-  border-radius: 5px;
   cursor: pointer;
-  transition: opacity 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: var(--gray);
+    color: #000;
+  }
+
+  &_order {
+    background-color: var(--green);
+    color: var(--dark-theme-color);
+
+    &:hover {
+      background-color: var(--dark-green);
+      color: var(--dark-theme-color);
+    }
+  }
 
   &_dark {
     border-color: var(--dark-theme-color);
-  }
-
-  &:hover {
-    opacity: 0.6;
   }
 }
 

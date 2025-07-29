@@ -75,7 +75,7 @@ export const Cart = ({
                     Очистить корзину
                   </button>
                   <button
-                    className={cn(styles.cartButton, {
+                    className={cn(styles.cartButton, styles.cartButton_order, {
                       [styles.cartButton_dark]: theme === 'dark',
                     })}
                   >

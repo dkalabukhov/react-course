@@ -52,8 +52,8 @@
     border: 1px solid var(--light-theme-color);
 
     &:hover {
-      border: 1px solid #ccc;
-      background-color: #ccc;
+      border: 1px solid var(--gray);
+      background-color: var(--gray);
       color: #000;
     }
   }
@@ -63,12 +63,12 @@
   }
 
   &__btn_submit {
-    border: 1px solid #1a371b;
-    background-color: #4aa84c;
+    border: 1px solid var(--dark-green);
+    background-color: var(--green);
     color: #fff;
 
     &:hover {
-      background-color: #1a371b;
+      background-color: var(--dark-green);
     }
   }
 }
