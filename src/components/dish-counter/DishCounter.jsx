@@ -9,6 +9,8 @@ const MINIMUM_AMOUNT = 0;
 const MAXIMUM_AMOUNT = 5;
 
 export const DishCounter = ({ dishId }) => {
+  console.log(dishId);
+
   const { theme } = useTheme();
 
   const { dishCount, handleIncrement, handleDecrement } = useDishCounter(dishId)

@@ -10,7 +10,7 @@ export const RestaurantListItem = ({
   return (
     <Link
       className={styles.restaurantLink}
-      to={`/restaurants/${restaurant.id}`}
+      to={`/restaurants/${restaurant.id}/menu`}
     >
       <li className={styles.restaurantListItem}>
         <img

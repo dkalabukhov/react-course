@@ -12,6 +12,9 @@ import { RestaurantPage } from '../../pages/restaurant-page/RestaurantPage';
 
 import '../../destyle.css';
 import '../../globals.scss';
+import { RestaurantMenuPage } from '../../pages/restaurant-menu-page/RestaurantMenuPage';
+import { RestaurantReviewsPage } from '../../pages/restaurant-reviews-page/RestaurantReviewsPage';
+import { DishPage } from '../../pages/dish-page/DishPage';
 
 export const App = () => {
   return (
@@ -23,8 +26,12 @@ export const App = () => {
               <Route element={<MainLayout />}>
                 <Route index element={<HomePage />} />
                 <Route path='restaurants' element={<RestaurantsPage />}>
-                  <Route path=':restaurantId' element={<RestaurantPage />} />
+                  <Route path=':restaurantId' element={<RestaurantPage />}>
+                    <Route path='menu' element={<RestaurantMenuPage />} />
+                    <Route path='reviews' element={<RestaurantReviewsPage />} />
+                  </Route>
                 </Route>
+                <Route path='dish/:dishId' element={<DishPage />} />
                 <Route path='*' element={<NotFoundPage />} />
               </Route>
             </Routes>

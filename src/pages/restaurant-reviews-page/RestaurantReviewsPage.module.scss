@@ -1,0 +1,9 @@
+.reviews {
+  align-self: start;
+
+  &__title {
+    text-transform: uppercase;
+    margin: 15px 0;
+    font-weight: 300;
+  }
+}
