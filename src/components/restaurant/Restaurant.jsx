@@ -1,16 +1,29 @@
 import { AnimatePresence, motion } from 'motion/react';
+import { NavLink, Outlet } from 'react-router';
 import cn from 'classnames';
 
-import { ReviewList } from '../review-list/ReviewList';
-import { MenuList } from './menu-list/MenuList';
-import { ReviewForm } from '../review-form/ReviewForm';
 import { useTheme } from '../theme-context/use-theme';
-import { useAuth } from '../auth-context/use-auth';
 
 import styles from './Restaurant.module.scss';
 
+const RestaurantTab = ({ pathTo, title }) => {
+  return (
+    <li>
+      <h3 className={styles.restaurant__subtitle}>
+        <NavLink
+          to={pathTo}
+          className={({ isActive }) =>
+            cn({ [styles.restaurant__activeLink]: isActive })
+          }
+        >
+          {title}
+        </NavLink>
+      </h3>
+    </li>
+  );
+};
+
 export const Restaurant = ({ restaurant }) => {
-  const { isAuthorized } = useAuth();
   const { theme } = useTheme();
 
   if (!restaurant.name || !restaurant.menu.length) {
@@ -30,18 +43,14 @@ export const Restaurant = ({ restaurant }) => {
         })}
       >
         <h2 className={styles.restaurant__title}>{restaurant.name}</h2>
-        <h3 className={styles.restaurant__subtitle}>Меню</h3>
-        {restaurant.menu.length ? (
-          <MenuList dishesIds={restaurant.menu} />
-        ) : null}
-        <h3 className={styles.restaurant__subtitle}>Отзывы</h3>
-        {restaurant.reviews.length ? (
-          <ReviewList reviewsIds={restaurant.reviews} />
-        ) : (
-          <p>Отзывов нет. Оставьте первый</p>
-        )}
-        <h3 className={styles.restaurant__subtitle}>Оставить отзыв</h3>
-        {isAuthorized ? <ReviewForm /> : <p>Войдите, чтобы оставить отзыв</p>}
+        <ul className={styles.restaurant__tabs}>
+          <RestaurantTab pathTo={`/restaurants/${restaurant.id}/menu`} title='Меню' />
+          <li>
+            <span>|</span>
+          </li>
+          <RestaurantTab pathTo={`/restaurants/${restaurant.id}/reviews`} title='Отзывы' />
+        </ul>
+        <Outlet context={restaurant} />
       </motion.div>
     </AnimatePresence>
   );

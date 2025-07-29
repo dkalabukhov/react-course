@@ -17,8 +17,15 @@ export const restaurantsSlice = createSlice({
   selectors: {
     selectRestaurantsIds: (state) => state.ids,
     selectRestaurantById: (state, id) => state.entities[id],
+    selectRestaurantByDishId: (state, dishId) => {
+      const restaurants = Object.values(state.entities);
+      return restaurants.find(({ menu }) => menu.includes(dishId));
+    },
   },
 });
 
-export const { selectRestaurantById, selectRestaurantsIds } =
-  restaurantsSlice.selectors;
+export const {
+  selectRestaurantById,
+  selectRestaurantsIds,
+  selectRestaurantByDishId,
+} = restaurantsSlice.selectors;

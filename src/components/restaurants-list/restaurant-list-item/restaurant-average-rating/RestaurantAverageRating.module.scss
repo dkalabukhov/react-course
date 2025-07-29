@@ -1,0 +1,19 @@
+.starRating {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+  font-size: 14px;
+
+  &__star {
+    font-size: 12px;
+    filter: grayscale(100%);
+
+    &_active {
+      filter: grayscale(0);
+    }
+  }
+
+  &__count {
+    margin-top: -0.2rem;
+  }
+}

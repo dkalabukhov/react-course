@@ -1,23 +1,23 @@
 import cn from 'classnames';
+import { Link, useLocation } from 'react-router';
 
 import styles from './RestaurantTab.module.scss';
 
-export const RestaurantTab = ({
-  restaurant,
-  activeRestaurantId,
-  handleTabClick,
-}) => {
+export const RestaurantTab = ({ restaurant }) => {
+  const { pathname } = useLocation();
+
   return (
     <li className={styles.restaurantTab}>
-      <button
+      <Link
+        to={`/restaurants/${restaurant.id}/menu`}
         className={cn(styles.restaurantTab__button, {
           [styles.restaurantTab__button_active]:
-            restaurant.id === activeRestaurantId,
+            pathname === `/restaurants/${restaurant.id}/menu` ||
+            pathname === `/restaurants/${restaurant.id}/reviews`,
         })}
-        onClick={() => handleTabClick(restaurant.id)}
       >
         {restaurant.name}
-      </button>
+      </Link>
     </li>
   );
 };

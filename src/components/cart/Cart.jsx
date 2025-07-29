@@ -9,7 +9,12 @@ import { CartItemContainer } from './cart-item/CartItemContainer';
 import styles from './Cart.module.scss';
 import { ShoppingCart } from 'lucide-react';
 
-export const Cart = ({ cartItemsIds, totalPrice, handleClearCart }) => {
+export const Cart = ({
+  cartItemsIds,
+  totalPrice,
+  handleClearCart,
+  cartItemsCount,
+}) => {
   const { isAuthorized } = useAuth();
   const { theme } = useTheme();
 
@@ -28,11 +33,21 @@ export const Cart = ({ cartItemsIds, totalPrice, handleClearCart }) => {
             className={styles.sheetTrigger}
           >
             <span>Корзина</span>
+            {cartItemsCount > 0 && (
+              <div
+                className={cn(styles.cartItemsCount, {
+                  [styles.cartItemsCount_dark]: theme === 'dark',
+                })}
+              >
+                {cartItemsCount}
+              </div>
+            )}
             <ShoppingCart />
           </button>
           <Sheet
             active={isCartActive}
             hideSheet={hideCart}
+            scroll
             side='right'
             size='large'
             themeMode={theme}
@@ -60,7 +75,7 @@ export const Cart = ({ cartItemsIds, totalPrice, handleClearCart }) => {
                     Очистить корзину
                   </button>
                   <button
-                    className={cn(styles.cartButton, {
+                    className={cn(styles.cartButton, styles.cartButton_order, {
                       [styles.cartButton_dark]: theme === 'dark',
                     })}
                   >

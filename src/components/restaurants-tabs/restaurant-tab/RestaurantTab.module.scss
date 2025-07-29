@@ -1,5 +1,6 @@
 .restaurantTab {
   &__button {
+    display: flex;
     padding: 0.5rem 1rem;
     flex-shrink: 0;
     white-space: nowrap;
@@ -16,7 +17,7 @@
   }
 
   &__button_active {
-    color: #9d2828;
+    color: var(--active-link-color);
   }
 }
 
