@@ -38,10 +38,14 @@
     text-transform: uppercase;
     margin: 15px 0;
     font-weight: 300;
-    transition: color 0.3s ease;
+  }
 
-    &_active {
-      color: var(--active-link-color);
+  &__activeLink {
+    color: var(--active-link-color);
+    transition: all 0.3s ease;
+
+    &:hover {
+      opacity: 0.8;
     }
   }
 }

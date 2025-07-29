@@ -10,8 +10,6 @@ export const RestaurantReviewsPage = () => {
   const restaurant = useOutletContext();
   const { isAuthorized } = useAuth();
 
-  console.log(restaurant);
-
   return (
     <div className={styles.reviews}>
       {restaurant.reviews.length ? (

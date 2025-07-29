@@ -13,7 +13,7 @@ const RestaurantTab = ({ pathTo, title }) => {
         <NavLink
           to={pathTo}
           className={({ isActive }) =>
-            cn({ [styles.restaurant__subtitle_active]: isActive })
+            cn({ [styles.restaurant__activeLink]: isActive })
           }
         >
           {title}
