@@ -4,6 +4,7 @@
   min-height: 100vh;
 
   &__main {
+    display: flex;
     color: var(--light-theme-color);
     background-color: var(--light-theme-bg);
 

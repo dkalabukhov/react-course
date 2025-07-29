@@ -4,6 +4,7 @@
   align-items: center;
   background-color: var(--light-theme-restaurant-bg);
   padding: 1rem;
+  min-height: 100%;
 
   &_dark {
     background-color: var(--dark-theme-restaurant-bg);
