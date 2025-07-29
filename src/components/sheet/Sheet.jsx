@@ -7,6 +7,7 @@ export const Sheet = ({
   themeMode = 'light',
   side = 'left',
   size = 'normal',
+  scroll = false,
   active,
   hideSheet,
   children,
@@ -26,6 +27,7 @@ export const Sheet = ({
       >
         <div
           className={cn(styles.sheet__content, {
+            [styles.sheet__content_scroll]: scroll,
             [styles.sheet__content_right]: side === 'right',
             [styles.sheet__content_large]: size === 'large',
             [styles.sheet__content_light]: themeMode === 'light',

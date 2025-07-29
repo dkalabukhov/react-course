@@ -51,5 +51,10 @@ export const selectTotalCartPrice = createSelector(
   }
 );
 
+export const selectCartItemsCount = createSelector(
+  [selectCartSlice],
+  (cartSlice) => Object.values(cartSlice).reduce((acc, count) => acc + count, 0),
+);
+
 export const { selectAmountByItemId } = cartSlice.selectors;
 export const { addToCart, removeFromCart, clearCart } = cartSlice.actions;
